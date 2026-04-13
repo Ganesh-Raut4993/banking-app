@@ -1,32 +1,14 @@
 [
   {
     "id": "ACC1001",
-    "name": "Savings Account",
+    "holderName": "Ganesh Raut",
+    "accountNumber": "1234567890",
+    "accountType": "Savings",
     "status": "active",
-    "balance": 25000.75
-  },
-  {
-    "id": "ACC1002",
-    "name": "Current Account",
-    "status": "dormant",
-    "balance": 0.00
-  },
-  {
-    "id": "ACC1003",
-    "name": "Salary Account",
-    "status": "active",
-    "balance": 82000.50
-  },
-  {
-    "id": "ACC1004",
-    "name": "Joint Account",
-    "status": "inactive",
-    "balance": 1500.00
-  },
-  {
-    "id": "ACC1005",
-    "name": "Fixed Deposit",
-    "status": "active",
-    "balance": 500000.00
+    "balance": 25000.75,
+    "branchCode": "BR001",
+    "branchName": "Pune Main",
+    "ifscCode": "BANK0001",
+    "mmid": "9876543210"
   }
 ]
