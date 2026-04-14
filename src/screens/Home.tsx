@@ -10,7 +10,8 @@ import { useHomeViewModel } from '../viewModels/HomeViewModel';
 type NavigationProp = BottomTabNavigationProp<BottomTabParamList, 'HomeStack'>;
 
 const Home: React.FC = () => {
-  const { accounts } = useHomeViewModel();
+  // const { accounts } = useHomeViewModel();
+  const { data: accounts, isLoading, error } = useHomeViewModel();
   const navigation = useNavigation<NavigationProp>();
 
   const renderItem = useCallback(({ item }: { item: Account }) => (

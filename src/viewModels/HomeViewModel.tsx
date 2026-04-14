@@ -1,18 +1,23 @@
-import { useEffect, useState } from "react";
 import { Account } from "../types/account";
-import { accountsRepository } from "../repositories/AccountsRepository";
+import { useQuery } from "@tanstack/react-query";
+import { getAccounts } from "../repositories/AccountsRepository";
 
-export const useHomeViewModel = () => {
-    // ViewModel logic can be added here in the future
-    const [accounts, setAccounts] = useState<Account[]>([]);
-
-    useEffect(() => {
-        accountsRepository.getAccounts()
-            .then(fetchedAccounts => {
-                console.log('Fetched accounts:', JSON.stringify(fetchedAccounts, null, 2));
-                setAccounts(fetchedAccounts);
-            });
-    }, []);
-
-    return { accounts };
+export interface HomeViewModelProps {
+    data: Account[];
+    isLoading: boolean;
+    error: unknown;
 }
+
+export const useHomeViewModel = (): HomeViewModelProps => {
+
+    const { data, isLoading, error } = useQuery({
+        queryKey: ['accounts'],
+        queryFn: getAccounts,
+    });
+
+    return {
+        data: data ?? [],
+        isLoading,
+        error,
+    };
+};

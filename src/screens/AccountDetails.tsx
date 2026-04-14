@@ -13,7 +13,12 @@ interface Props {
 
 const AccountDetails: React.FC<Props> = ({ route }) => {
   const { accountId } = route.params;
-  const { account } = useDetailsViewModel(accountId);
+
+  const { data: account, isLoading, error } = useDetailsViewModel(accountId);
+
+  if (isLoading) {
+    return <Text style={styles.information}>Loading...</Text>;
+  }
 
   if (!account) {
     return <Text style={styles.error}>Account not found</Text>;

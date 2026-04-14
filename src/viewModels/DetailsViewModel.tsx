@@ -1,15 +1,23 @@
-import { useEffect, useState } from "react";
 import { Account } from "../types/account";
-import { accountsRepository } from "../repositories/AccountsRepository";
+import { useQuery } from "@tanstack/react-query";
+import { getAccountById } from "../repositories/AccountsRepository";
 
 
-export const useDetailsViewModel = (accountId: string) => {
-    const [account, setAccount] = useState<Account | undefined>();
+export interface DetailsViewModelProps {
+    data: Account | undefined;
+    isLoading: boolean;
+    error: unknown;
+}
 
-    // Fetch account details based on accountId
-    useEffect(() => {
-        accountsRepository.getAccountById(accountId).then(setAccount)
-    }, [accountId]);
+export const useDetailsViewModel = (accountId: string): DetailsViewModelProps => {
+    const { data, isLoading, error } = useQuery({
+        queryKey: ['account', accountId],
+        queryFn: () => getAccountById(accountId),
+    });
 
-    return { account };
+    return {
+        data,
+        isLoading,
+        error,
+    };
 }
