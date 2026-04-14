@@ -2,8 +2,8 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { BottomTabParamList } from '../types/navigation';
-import { useBankingStore } from '../store/useBankingStore';
 import { useDetailsViewModel } from '../viewModels/DetailsViewModel';
+import LoadingIndicator from '../components/LoadingIndicator';
 
 type DetailsRouteProp = RouteProp<BottomTabParamList, 'AccountDetails'>;
 
@@ -17,7 +17,7 @@ const AccountDetails: React.FC<Props> = ({ route }) => {
   const { data: account, isLoading, error } = useDetailsViewModel(accountId);
 
   if (isLoading) {
-    return <Text style={styles.information}>Loading...</Text>;
+    return <LoadingIndicator />
   }
 
   if (!account) {

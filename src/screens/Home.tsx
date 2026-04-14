@@ -1,16 +1,15 @@
 import React, { useCallback } from 'react';
-import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, StyleSheet, ActivityIndicator } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
-import { useBankingStore } from '../store/useBankingStore';
 import { Account } from '../types/account';
 import { BottomTabParamList } from '../types/navigation';
 import { useHomeViewModel } from '../viewModels/HomeViewModel';
+import LoadingIndicator from '../components/LoadingIndicator';
 
 type NavigationProp = BottomTabNavigationProp<BottomTabParamList, 'HomeStack'>;
 
 const Home: React.FC = () => {
-  // const { accounts } = useHomeViewModel();
   const { data: accounts, isLoading, error } = useHomeViewModel();
   const navigation = useNavigation<NavigationProp>();
 
@@ -25,6 +24,10 @@ const Home: React.FC = () => {
       <Text>Number: {item.accountNumber}</Text>
     </TouchableOpacity>
   ), [navigation]);
+
+  if (isLoading) {
+    return <LoadingIndicator />
+  }
 
   return (
     <View style={styles.container}>
