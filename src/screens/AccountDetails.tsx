@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { BottomTabParamList } from '../types/navigation';
 import { useBankingStore } from '../store/useBankingStore';
+import { useDetailsViewModel } from '../viewModels/DetailsViewModel';
 
 type DetailsRouteProp = RouteProp<BottomTabParamList, 'AccountDetails'>;
 
@@ -12,9 +13,7 @@ interface Props {
 
 const AccountDetails: React.FC<Props> = ({ route }) => {
   const { accountId } = route.params;
-  const account = useBankingStore((state) =>
-    state.accounts.find((acc) => acc.id === accountId)
-  );
+  const { account } = useDetailsViewModel(accountId);
 
   if (!account) {
     return <Text style={styles.error}>Account not found</Text>;
@@ -37,13 +36,10 @@ const AccountDetails: React.FC<Props> = ({ route }) => {
 export default AccountDetails;
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-},
+  container: { flex: 1, padding: 16 },
   title: { fontSize: 22, fontWeight: 'bold', marginBottom: 12 },
   error: { fontSize: 18, color: 'red', textAlign: 'center', marginTop: 20 },
   information: {
-    fontSize: 16, marginBottom: 6, borderRadius: 8,   
+    fontSize: 16, marginBottom: 6, borderRadius: 8,
   }
 });

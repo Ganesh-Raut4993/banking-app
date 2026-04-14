@@ -5,11 +5,12 @@ import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 import { useBankingStore } from '../store/useBankingStore';
 import { Account } from '../types/account';
 import { BottomTabParamList } from '../types/navigation';
+import { useHomeViewModel } from '../viewModels/HomeViewModel';
 
-type NavigationProp = BottomTabNavigationProp<BottomTabParamList, 'Home'>;
+type NavigationProp = BottomTabNavigationProp<BottomTabParamList, 'HomeStack'>;
 
 const Home: React.FC = () => {
-  const accounts = useBankingStore((state) => state.accounts);
+  const { accounts } = useHomeViewModel();
   const navigation = useNavigation<NavigationProp>();
 
   const renderItem = useCallback(({ item }: { item: Account }) => (

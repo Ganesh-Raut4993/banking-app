@@ -3,7 +3,7 @@ export interface Account {
   holderName: string;
   accountNumber: string;
   accountType: string;
-  status: 'active' | 'dormant' | 'inactive';
+  status: string;
   balance: number;
   branchCode?: string;
   branchName?: string;
