@@ -1,13 +1,14 @@
+// src/components/CardItem.tsx
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Card } from '../types/Card';
 
 const CardItem: React.FC<{ card: Card }> = ({ card }) => {
-    const [showCVV, setShowCVV] = useState(false);
     const [showNumber, setShowNumber] = useState(false);
+    const [showCVV, setShowCVV] = useState(false);
 
     const maskCardNumber = (num: string) =>
-        num.replace(/\d(?=\d{4})/g, '*'); // show only last 4 digits
+        num.replace(/\d(?=\d{4})/g, '*'); // mask all but last 4 digits
 
     return (
         <View
@@ -16,9 +17,10 @@ const CardItem: React.FC<{ card: Card }> = ({ card }) => {
                 card.type === 'debit' ? styles.debitBackground : styles.creditBackground,
             ]}
         >
-            <Text style={styles.cardType}>{card.type.toUpperCase()} Card</Text>
-            <Text style={styles.holder}>{card.holderName}</Text>
+            <Text style={styles.cardType}>{card.type} Card</Text>
+            <Text style={styles.holder}>{card.holderName.toUpperCase()}</Text>
 
+            {/* Card Number Row */}
             <View style={styles.row}>
                 <Text style={styles.number}>
                     {showNumber ? card.cardNumber : maskCardNumber(card.cardNumber)}
@@ -33,6 +35,7 @@ const CardItem: React.FC<{ card: Card }> = ({ card }) => {
                 </TouchableOpacity>
             </View>
 
+            {/* Expiry + CVV Row */}
             <View style={styles.row}>
                 <Text style={styles.expiry}>Expiry: {card.expiry}</Text>
                 <View style={styles.row}>
@@ -55,23 +58,31 @@ export default CardItem;
 
 const styles = StyleSheet.create({
     card: {
-        borderRadius: 12,
+        borderRadius: 16,
         padding: 20,
-        marginBottom: 16,
+        marginVertical: 16,
+        marginHorizontal: 12,
         elevation: 4,
+        width: '90%', // ensures card fits nicely in carousel
+        alignSelf: 'center',
     },
     debitBackground: {
-        backgroundColor: '#4facfe',
+        backgroundColor: '#4facfe', // blue tone
     },
     creditBackground: {
-        backgroundColor: '#43e97b',
+        backgroundColor: '#43e97b', // green tone
     },
     cardType: { fontSize: 18, fontWeight: '700', color: '#fff', marginBottom: 8 },
     holder: { fontSize: 16, color: '#fff', marginBottom: 4 },
     number: { fontSize: 20, letterSpacing: 2, color: '#fff' },
     expiry: { fontSize: 14, color: '#fff' },
     cvvLabel: { fontSize: 14, color: '#fff', marginRight: 8 },
-    row: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 8 },
+    row: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginTop: 12,
+    },
     toggleButton: {
         backgroundColor: 'rgba(255,255,255,0.2)',
         paddingHorizontal: 10,

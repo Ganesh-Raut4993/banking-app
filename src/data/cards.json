@@ -1,7 +1,7 @@
 [
   {
     "id": "CARD1001",
-    "type": "debit",
+    "type": "Debit",
     "holderName": "Ganesh Raut",
     "cardNumber": "4111111111111111",
     "expiry": "12/28",
@@ -9,7 +9,7 @@
   },
   {
     "id": "CARD1002",
-    "type": "credit",
+    "type": "Credit",
     "holderName": "Ganesh Raut",
     "cardNumber": "5500000000000004",
     "expiry": "08/27",

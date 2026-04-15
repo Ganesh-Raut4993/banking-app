@@ -9,6 +9,7 @@ import LoadingIndicator from '../components/LoadingIndicator';
 import { useCardsViewModel } from '../viewModels/CardsViewModel';
 import { Card } from '../types/Card';
 import CardItem from '../components/CardItem';
+import CardsCarousel from '../components/CardsCarousel';
 
 type NavigationProp = BottomTabNavigationProp<BottomTabParamList, 'HomeStack'>;
 
@@ -51,11 +52,12 @@ const Home: React.FC = () => {
         style={{ flexGrow: 0 }}
       />
       <Text style={styles.sectionTitle}>Cards</Text>
-      <FlatList
+      {/* <FlatList
         data={cards}
         keyExtractor={item => item.id}
         renderItem={renderCardItem}
-      />
+      /> */}
+      <CardsCarousel cards={cards} />
     </View>
   );
 };
