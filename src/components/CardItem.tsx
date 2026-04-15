@@ -14,7 +14,7 @@ const CardItem: React.FC<{ card: Card }> = ({ card }) => {
         <View
             style={[
                 styles.card,
-                card.type === 'debit' ? styles.debitBackground : styles.creditBackground,
+                card.type.toLocaleLowerCase() === 'debit' ? styles.debitBackground : styles.creditBackground,
             ]}
         >
             <Text style={styles.cardType}>{card.type} Card</Text>
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     card: {
         borderRadius: 16,
         padding: 20,
-        marginVertical: 16,
+        marginVertical: 8,
         marginHorizontal: 12,
         elevation: 4,
         width: '90%', // ensures card fits nicely in carousel

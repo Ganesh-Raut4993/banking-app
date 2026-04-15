@@ -2,6 +2,7 @@
 export type HomeStackParamList = {
   Home: undefined;
   AccountDetails: { accountId: string };
+  Transactions: undefined;
 };
 
 export type BottomTabParamList = {
@@ -9,4 +10,5 @@ export type BottomTabParamList = {
   Cards: undefined;
   ReachUs: undefined;
   AccountDetails: { accountId: string };
+  Transactions: undefined;
 };
