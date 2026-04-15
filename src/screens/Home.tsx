@@ -6,11 +6,19 @@ import { Account } from '../types/account';
 import { BottomTabParamList } from '../types/navigation';
 import { useHomeViewModel } from '../viewModels/HomeViewModel';
 import LoadingIndicator from '../components/LoadingIndicator';
+import { useCardsViewModel } from '../viewModels/CardsViewModel';
+import { Card } from '../types/Card';
+import CardItem from '../components/CardItem';
 
 type NavigationProp = BottomTabNavigationProp<BottomTabParamList, 'HomeStack'>;
 
+const maskCardNumber = (num: string) =>
+  num.replace(/\d(?=\d{4})/g, '*'); // show only last 4 digits
+
 const Home: React.FC = () => {
-  const { data: accounts, isLoading, error } = useHomeViewModel();
+  const { data: accounts, isLoading: isAccountsLoading, error } = useHomeViewModel();
+  const { data: cards, isLoading: isCardsLoading } = useCardsViewModel();
+
   const navigation = useNavigation<NavigationProp>();
 
   const renderItem = useCallback(({ item }: { item: Account }) => (
@@ -25,16 +33,28 @@ const Home: React.FC = () => {
     </TouchableOpacity>
   ), [navigation]);
 
-  if (isLoading) {
+  const renderCardItem = useCallback(({ item }: { item: Card }) => (
+    <CardItem card={item} />
+  ), []);
+
+  if (isAccountsLoading || isCardsLoading) {
     return <LoadingIndicator />
   }
 
   return (
     <View style={styles.container}>
+      <Text style={styles.sectionTitle}>Accounts</Text>
       <FlatList
         data={accounts}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
+        style={{ flexGrow: 0 }}
+      />
+      <Text style={styles.sectionTitle}>Cards</Text>
+      <FlatList
+        data={cards}
+        keyExtractor={item => item.id}
+        renderItem={renderCardItem}
       />
     </View>
   );
@@ -45,6 +65,7 @@ export default Home;
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 16, backgroundColor: '#f2f2f2' },
   title: { fontSize: 22, fontWeight: 'bold', marginBottom: 12 },
+  sectionTitle: { fontSize: 20, fontWeight: 'bold', marginVertical: 12 },
   card: { backgroundColor: '#fff', padding: 16, marginBottom: 12, borderRadius: 8, elevation: 3 },
   name: { fontSize: 18, fontWeight: '600', marginBottom: 4 }
 });
