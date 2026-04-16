@@ -1,0 +1,452 @@
+[
+  {
+    "transaction_id": "TXN_1000001",
+    "date": "2024-03-26 07:49:00",
+    "merchant": "Employer Corp",
+    "category": "Salary",
+    "amount": 4500.00,
+    "type": "CREDIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000002",
+    "date": "2024-04-04 20:23:00",
+    "merchant": "Blue Apron",
+    "category": "Food & Drink",
+    "amount": 143.88,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000003",
+    "date": "2024-01-19 16:40:00",
+    "merchant": "Venmo Transfer",
+    "category": "Income",
+    "amount": 250.00,
+    "type": "CREDIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000004",
+    "date": "2024-04-21 17:46:00",
+    "merchant": "Delta Air Lines",
+    "category": "Travel",
+    "amount": 1157.21,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000005",
+    "date": "2024-03-13 00:50:00",
+    "merchant": "IRS Refund",
+    "category": "Tax",
+    "amount": 1200.50,
+    "type": "CREDIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000006",
+    "date": "2024-01-05 21:23:00",
+    "merchant": "Target",
+    "category": "Shopping",
+    "amount": 99.29,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000007",
+    "date": "2024-02-03 05:47:00",
+    "merchant": "Dividend Payout",
+    "category": "Investment",
+    "amount": 45.30,
+    "type": "CREDIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000008",
+    "date": "2024-02-28 07:15:00",
+    "merchant": "Zillow",
+    "category": "Rent",
+    "amount": 1800.00,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000009",
+    "date": "2024-03-17 09:04:00",
+    "merchant": "Best Buy",
+    "category": "Electronics",
+    "amount": 530.52,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000010",
+    "date": "2024-02-11 02:14:00",
+    "merchant": "Amazon Refund",
+    "category": "Shopping",
+    "amount": 89.99,
+    "type": "CREDIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000011",
+    "date": "2024-04-23 23:58:00",
+    "merchant": "Target",
+    "category": "Shopping",
+    "amount": 73.25,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000012",
+    "date": "2024-04-01 03:58:00",
+    "merchant": "Planet Fitness",
+    "category": "Health",
+    "amount": 29.99,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000013",
+    "date": "2024-03-26 10:17:00",
+    "merchant": "Airbnb Refund",
+    "category": "Travel",
+    "amount": 450.00,
+    "type": "CREDIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000014",
+    "date": "2024-01-22 17:31:00",
+    "merchant": "Spotify",
+    "category": "Subscriptions",
+    "amount": 10.99,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000015",
+    "date": "2024-04-05 19:42:00",
+    "merchant": "Cash Deposit",
+    "category": "Income",
+    "amount": 500.00,
+    "type": "CREDIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000016",
+    "date": "2024-01-20 00:55:00",
+    "merchant": "Utility Bill",
+    "category": "Bills",
+    "amount": 160.05,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000017",
+    "date": "2024-02-08 05:20:00",
+    "merchant": "Nike",
+    "category": "Shopping",
+    "amount": 131.88,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000018",
+    "date": "2024-03-11 07:19:00",
+    "merchant": "Steam",
+    "category": "Entertainment",
+    "amount": 59.83,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000019",
+    "date": "2024-01-07 19:48:00",
+    "merchant": "FedEx",
+    "category": "Shipping",
+    "amount": 28.99,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000020",
+    "date": "2024-02-16 14:49:00",
+    "merchant": "Chevron",
+    "category": "Gas",
+    "amount": 57.17,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000021",
+    "date": "2024-04-07 15:45:00",
+    "merchant": "eBay Sale",
+    "category": "Income",
+    "amount": 85.00,
+    "type": "CREDIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000022",
+    "date": "2024-01-25 20:21:00",
+    "merchant": "Shell",
+    "category": "Gas",
+    "amount": 48.88,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000023",
+    "date": "2024-02-02 22:47:00",
+    "merchant": "Costco",
+    "category": "Groceries",
+    "amount": 297.55,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000024",
+    "date": "2024-01-31 04:13:00",
+    "merchant": "Credit Card Reward",
+    "category": "Income",
+    "amount": 12.40,
+    "type": "CREDIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000025",
+    "date": "2024-02-05 07:28:00",
+    "merchant": "Whole Foods",
+    "category": "Groceries",
+    "amount": 93.52,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000026",
+    "date": "2024-03-23 09:36:00",
+    "merchant": "Interest Earned",
+    "category": "Investment",
+    "amount": 4.12,
+    "type": "CREDIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000027",
+    "date": "2024-01-17 17:56:00",
+    "merchant": "Starbucks",
+    "category": "Food & Drink",
+    "amount": 9.93,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000028",
+    "date": "2024-01-24 08:46:00",
+    "merchant": "Uber",
+    "category": "Transport",
+    "amount": 22.15,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000029",
+    "date": "2024-04-12 10:13:00",
+    "merchant": "Side Gig Pay",
+    "category": "Income",
+    "amount": 320.00,
+    "type": "CREDIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000030",
+    "date": "2024-02-13 18:49:00",
+    "merchant": "Steam",
+    "category": "Entertainment",
+    "amount": 18.19,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000031",
+    "date": "2024-02-13 08:07:00",
+    "merchant": "Dunkin'",
+    "category": "Food & Drink",
+    "amount": 5.31,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000032",
+    "date": "2024-03-10 03:03:00",
+    "merchant": "Consulting Fee",
+    "category": "Income",
+    "amount": 1500.00,
+    "type": "CREDIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000033",
+    "date": "2024-04-11 21:24:00",
+    "merchant": "Target",
+    "category": "Shopping",
+    "amount": 117.48,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000034",
+    "date": "2024-01-15 05:09:00",
+    "merchant": "Home Depot",
+    "category": "DIY",
+    "amount": 96.26,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000035",
+    "date": "2024-03-21 13:29:00",
+    "merchant": "Rebate Check",
+    "category": "Income",
+    "amount": 55.00,
+    "type": "CREDIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000036",
+    "date": "2024-04-18 09:07:00",
+    "merchant": "FedEx",
+    "category": "Shipping",
+    "amount": 14.40,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000037",
+    "date": "2024-04-05 01:15:00",
+    "merchant": "Amazon",
+    "category": "Shopping",
+    "amount": 94.84,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000038",
+    "date": "2024-01-15 13:34:00",
+    "merchant": "Steam",
+    "category": "Entertainment",
+    "amount": 42.65,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000039",
+    "date": "2024-02-19 01:13:00",
+    "merchant": "Dunkin'",
+    "category": "Food & Drink",
+    "amount": 13.97,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000040",
+    "date": "2024-01-01 04:40:00",
+    "merchant": "Sephora",
+    "category": "Beauty",
+    "amount": 125.83,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000041",
+    "date": "2024-03-05 21:42:00",
+    "merchant": "Birthday Gift",
+    "category": "Income",
+    "amount": 100.00,
+    "type": "CREDIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000042",
+    "date": "2024-03-22 21:51:00",
+    "merchant": "Blue Apron",
+    "category": "Food & Drink",
+    "amount": 108.55,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000043",
+    "date": "2024-04-08 20:31:00",
+    "merchant": "Trader Joe's",
+    "category": "Groceries",
+    "amount": 109.65,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000044",
+    "date": "2024-03-15 15:07:00",
+    "merchant": "Stock Sale",
+    "category": "Investment",
+    "amount": 2400.00,
+    "type": "CREDIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000045",
+    "date": "2024-01-08 21:08:00",
+    "merchant": "FedEx",
+    "category": "Shipping",
+    "amount": 14.02,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000046",
+    "date": "2024-02-20 03:56:00",
+    "merchant": "Uber",
+    "category": "Transport",
+    "amount": 15.63,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000047",
+    "date": "2024-01-06 19:04:00",
+    "merchant": "Uber",
+    "category": "Transport",
+    "amount": 16.22,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000048",
+    "date": "2024-01-10 08:39:00",
+    "merchant": "Nintendo",
+    "category": "Entertainment",
+    "amount": 76.97,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000049",
+    "date": "2024-03-08 14:18:00",
+    "merchant": "Referral Bonus",
+    "category": "Income",
+    "amount": 50.00,
+    "type": "CREDIT",
+    "status": "COMPLETED"
+  },
+  {
+    "transaction_id": "TXN_1000050",
+    "date": "2024-01-18 03:36:00",
+    "merchant": "Home Depot",
+    "category": "DIY",
+    "amount": 192.09,
+    "type": "DEBIT",
+    "status": "COMPLETED"
+  }
+]
