@@ -1,18 +1,22 @@
-[
-  {
-    "id": "CARD1001",
-    "type": "Debit",
-    "holderName": "Ganesh Raut",
-    "cardNumber": "4111111111111111",
-    "expiry": "12/28",
-    "cvv": "123"
-  },
-  {
-    "id": "CARD1002",
-    "type": "Credit",
-    "holderName": "Ganesh Raut",
-    "cardNumber": "5500000000000004",
-    "expiry": "08/27",
-    "cvv": "456"
-  }
-]
+{
+  "credit": [
+    {
+      "id": "CARD1002",
+      "type": "Credit",
+      "holderName": "Ganesh Raut",
+      "cardNumber": "5500000000000004",
+      "expiry": "08/27",
+      "cvv": "456"
+    }
+  ],
+  "debit": [
+    {
+      "id": "CARD1001",
+      "type": "Debit",
+      "holderName": "Ganesh Raut",
+      "cardNumber": "4111111111111111",
+      "expiry": "12/28",
+      "cvv": "123"
+    }
+  ]
+}

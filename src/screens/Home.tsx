@@ -56,12 +56,7 @@ const Home: React.FC = () => {
         <Text style={styles.transactionButtonText}>Transaction History</Text>
       </TouchableOpacity>
       <Text style={styles.sectionTitle}>Cards</Text>
-      {/* <FlatList
-        data={cards}
-        keyExtractor={item => item.id}
-        renderItem={renderCardItem}
-      /> */}
-      <CardsCarousel cards={cards} />
+      <CardsCarousel cards={Object.values(cards).flat() ?? []} />
     </View>
   );
 };

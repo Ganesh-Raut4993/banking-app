@@ -3,9 +3,7 @@ import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import accountsData from '../data/accounts.json';
 import transactionsData from '../data/transactions.json';
-import { Account } from '../types/account';
 import cardsData from '../data/cards.json';
-import { Transaction } from '../types/Transaction';
 
 const axiosInstance = axios.create({
     baseURL: 'http://localhost', // baseURL is required but not actually used
@@ -30,7 +28,7 @@ mock.onGet(/\/accounts\/\w+/).reply(config => {
 mock.onGet('/cards').reply(200, cardsData);
 mock.onGet(/\/cards\/\w+/).reply(config => {
     const id = config.url?.split('/').pop();
-    const card = cardsData.find(c => c.id === id);
+    const card = cardsData
     return card ? [200, card] : [404];
 });
 

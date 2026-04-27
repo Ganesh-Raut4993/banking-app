@@ -1,3 +1,8 @@
+export interface CardsResponse {
+    credit: Card[];
+    debit: Card[];
+}
+
 export interface Card {
     id: string;
     type: string;           // e.g., 'debit', 'credit'

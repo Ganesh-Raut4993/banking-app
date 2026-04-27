@@ -3,8 +3,8 @@ import { StyleSheet, Text, TextInput, Button, Alert, KeyboardAvoidingView, Platf
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
 
 const Login: React.FC<{ onLoginSuccess: () => void }> = ({ onLoginSuccess }) => {
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+    const [email, setEmail] = useState("user@bank.com")
+    const [password, setPassword] = useState("12345678")
     const [emailError, setEmailError] = useState("");
     const [passwordError, setPasswordError] = useState("");
 
@@ -58,64 +58,6 @@ const Login: React.FC<{ onLoginSuccess: () => void }> = ({ onLoginSuccess }) => 
                 keyboardType="email-address"
             />
             {emailError ? <Text style={styles.error}>{emailError}</Text> : null}
-            <TextInput
-                style={styles.input}
-                placeholder="password"
-                value={password}
-                onChangeText={handlePasswordChange}
-                secureTextEntry
-            />
-            {passwordError ? <Text style={styles.error}>{passwordError}</Text> : null}
-
-            <TextInput
-                style={styles.input}
-                placeholder="password"
-                value={password}
-                onChangeText={handlePasswordChange}
-                secureTextEntry
-            />
-            {passwordError ? <Text style={styles.error}>{passwordError}</Text> : null}
-            <TextInput
-                style={styles.input}
-                placeholder="password"
-                value={password}
-                onChangeText={handlePasswordChange}
-                secureTextEntry
-            />
-            {passwordError ? <Text style={styles.error}>{passwordError}</Text> : null}
-            <TextInput
-                style={styles.input}
-                placeholder="password"
-                value={password}
-                onChangeText={handlePasswordChange}
-                secureTextEntry
-            />
-            {passwordError ? <Text style={styles.error}>{passwordError}</Text> : null}
-
-            <TextInput
-                style={styles.input}
-                placeholder="password"
-                value={password}
-                onChangeText={handlePasswordChange}
-                secureTextEntry
-            />
-            {passwordError ? <Text style={styles.error}>{passwordError}</Text> : null}
-            <TextInput
-                style={styles.input}
-                placeholder="password"
-                value={password}
-                onChangeText={handlePasswordChange}
-                secureTextEntry
-            />
-            {passwordError ? <Text style={styles.error}>{passwordError}</Text> : null}
-            <TextInput
-                style={styles.input}
-                placeholder="password"
-                value={password}
-                onChangeText={handlePasswordChange}
-                secureTextEntry
-            />
-            {passwordError ? <Text style={styles.error}>{passwordError}</Text> : null}
             <TextInput
                 style={styles.input}
                 placeholder="password"
