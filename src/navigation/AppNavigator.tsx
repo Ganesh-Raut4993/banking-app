@@ -3,15 +3,18 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { BottomTabParamList, HomeStackParamList } from '../types/navigation';
+import { BottomTabParamList, HomeStackParamList, TransferStackParamList } from '../types/navigation';
 import Cards from '../screens/Cards';
 import ReachUs from '../screens/ReachUs';
 import Home from '../screens/Home';
 import AccountDetails from '../screens/AccountDetails';
 import Transactions from '../screens/Transactions';
+import Transfer from '../screens/Tarnsfer';
+import NewPayee from '../screens/NewPayee';
 
 const Tab = createBottomTabNavigator<BottomTabParamList>();
 const Stack = createNativeStackNavigator<HomeStackParamList>();
+const SendMoneyStack = createNativeStackNavigator<TransferStackParamList>();
 
 // Home stack inside tabs
 const HomeStack: React.FC = () => (
@@ -35,6 +38,21 @@ const HomeStack: React.FC = () => (
   </Stack.Navigator>
 );
 
+const TransferStack: React.FC = () => {
+  return (
+    <SendMoneyStack.Navigator
+      screenOptions={{
+        headerStyle: { backgroundColor: '#2563eb' },
+        headerTintColor: '#fff',
+        headerTitleStyle: { fontWeight: 'bold' },
+        headerTitleAlign: 'center',
+      }}
+    >
+      <SendMoneyStack.Screen name="Transfer" component={Transfer} />
+      <SendMoneyStack.Screen name="NewPayee" component={NewPayee} />
+    </SendMoneyStack.Navigator>
+  )
+}
 const AppNavigator = () => {
   return (
     <NavigationContainer>
@@ -48,6 +66,12 @@ const AppNavigator = () => {
       >
 
         <Tab.Screen name="HomeStack" component={HomeStack} />
+
+        <Tab.Screen name="TransferStack" component={TransferStack}
+          options={{
+            title: 'Transfer',
+          }} />
+
         <Tab.Screen name="Cards" component={Cards}
           options={{
             headerShown: true,
