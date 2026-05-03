@@ -49,7 +49,10 @@ const TransferStack: React.FC = () => {
       }}
     >
       <SendMoneyStack.Screen name="Transfer" component={Transfer} />
-      <SendMoneyStack.Screen name="NewPayee" component={NewPayee} />
+      <SendMoneyStack.Screen name="NewPayee" component={NewPayee}
+        options={{
+          title: 'Add New Payee'
+        }} />
     </SendMoneyStack.Navigator>
   )
 }
