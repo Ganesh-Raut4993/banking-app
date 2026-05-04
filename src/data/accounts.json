@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ACC1001",
+    "holderName": "Ganesh Raut",
+    "accountNumber": "1234567890",
+    "accountType": "Savings",
+    "status": "active",
+    "balance": 25000.75,
+    "branchCode": "BR001",
+    "branchName": "Pune Main",
+    "ifscCode": "BANK0001",
+    "mmid": "9876543210"
+  }
+]

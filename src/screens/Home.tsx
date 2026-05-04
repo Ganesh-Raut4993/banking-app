@@ -1,0 +1,74 @@
+import React, { useCallback } from 'react';
+import { View, Text, FlatList, TouchableOpacity, StyleSheet, ActivityIndicator, Alert } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import { Account } from '../types/account';
+import { BottomTabParamList } from '../types/navigation';
+import { useHomeViewModel } from '../viewModels/HomeViewModel';
+import LoadingIndicator from '../components/LoadingIndicator';
+import { useCardsViewModel } from '../viewModels/CardsViewModel';
+import { Card } from '../types/Card';
+import CardItem from '../components/CardItem';
+import CardsCarousel from '../components/CardsCarousel';
+
+type NavigationProp = BottomTabNavigationProp<BottomTabParamList, 'HomeStack'>;
+
+const maskCardNumber = (num: string) =>
+  num.replace(/\d(?=\d{4})/g, '*'); // show only last 4 digits
+
+const Home: React.FC = () => {
+  const { data: accounts, isLoading: isAccountsLoading, error } = useHomeViewModel();
+  const { data: cards, isLoading: isCardsLoading } = useCardsViewModel();
+
+  const navigation = useNavigation<NavigationProp>();
+
+  const renderItem = useCallback(({ item }: { item: Account }) => (
+    <TouchableOpacity
+      style={styles.card}
+      onPress={() => navigation.navigate('AccountDetails', { accountId: item.id })}
+    >
+      <Text style={styles.name}>{item.holderName}</Text>
+      <Text>Balance: ₹{item.balance}</Text>
+      <Text>Type: {item.accountType}</Text>
+      <Text>Number: {item.accountNumber}</Text>
+    </TouchableOpacity>
+  ), [navigation]);
+
+  const renderCardItem = useCallback(({ item }: { item: Card }) => (
+    <CardItem card={item} />
+  ), []);
+
+  if (isAccountsLoading || isCardsLoading) {
+    return <LoadingIndicator />
+  }
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.sectionTitle}>Accounts</Text>
+      <FlatList
+        data={accounts}
+        keyExtractor={(item) => item.id}
+        renderItem={renderItem}
+        style={{ flexGrow: 0 }}
+      />
+      <TouchableOpacity style={styles.transactionButton}
+        onPress={() => navigation.navigate('Transactions')}>
+        <Text style={styles.transactionButtonText}>Transaction History</Text>
+      </TouchableOpacity>
+      <Text style={styles.sectionTitle}>Cards</Text>
+      <CardsCarousel cards={Object.values(cards).flat() ?? []} />
+    </View>
+  );
+};
+
+export default Home;
+
+const styles = StyleSheet.create({
+  container: { flex: 1, padding: 16, backgroundColor: '#f2f2f2' },
+  title: { fontSize: 22, fontWeight: 'bold', marginBottom: 12 },
+  sectionTitle: { fontSize: 20, fontWeight: 'bold', marginVertical: 12 },
+  card: { backgroundColor: '#fff', padding: 16, marginBottom: 12, borderRadius: 8, elevation: 3 },
+  name: { fontSize: 18, fontWeight: '600', marginBottom: 4 },
+  transactionButton: { backgroundColor: '#007bff', padding: 12, borderRadius: 8, alignItems: 'center', marginTop: 8 },
+  transactionButtonText: { color: '#fff', fontSize: 16, fontWeight: '600' },
+});
